@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox layoutX="-110.0" layoutY="-200.0" prefHeight="200.0" prefWidth="400.0">
-         <children>
-            <VBox prefHeight="200.0" prefWidth="400.0">
-               <children>
-                  <TextField fx:id="textField1">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <Button fx:id="button1" mnemonicParsing="false" onAction="#onButton1Action" text="test2">
-                     <VBox.margin>
-                        <Insets left="20.0" />
-                     </VBox.margin>
-                  </Button>
-                  <TilePane prefHeight="200.0" prefWidth="200.0" />
-               </children>
-            </VBox>
-         </children>
-      </VBox>
-      <Accordion layoutX="-6.0" layoutY="-349.0" />
+      <Text fontSmoothingType="LCD" layoutX="84.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Management">
+         <font>
+            <Font name="DejaVuMathTeXGyre-Regular" size="49.0" />
+         </font>
+      </Text>
+      <Button layoutX="252.0" layoutY="200.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="96.0" text="始める" textAlignment="CENTER">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
    </children>
-</AnchorPane>
+</Pane>

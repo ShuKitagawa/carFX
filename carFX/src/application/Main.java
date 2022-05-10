@@ -7,28 +7,22 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    @Override
-    public void start(Stage primaryStage) {
-        try {
-            // FXMLのレイアウトをロード
-            Parent root = FXMLLoader.load(
-                    getClass().getResource(getClass().getSimpleName() + ".fxml"));
-
-            // タイトルセット
-            primaryStage.setTitle("JavaFXSample");
-
-            // シーン生成
-            Scene scene = new Scene(root);
-
-            scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-                primaryStage.setScene(scene);
-                primaryStage.show();
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     public static void main(String[] args) {
-        launch(args);
+        // JavaFX の実行
+        Application.launch(args);
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        // fxml の読み込み
+        Parent root = FXMLLoader.load(getClass().getResource("/carcontoller.fxml"));
+
+        // Scene の作成・登録
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        // 表示
+        stage.show();
     }
 }
