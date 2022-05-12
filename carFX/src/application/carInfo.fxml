@@ -22,8 +22,8 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField layoutX="297.0" layoutY="215.0" />
-      <TextField layoutX="297.0" layoutY="253.0" />
+      <TextField layoutX="297.0" layoutY="215.0" promptText="L（リットル）" />
+      <TextField layoutX="297.0" layoutY="253.0" promptText="km（キロメートル）" />
       <Text fontSmoothingType="LCD" layoutX="115.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="車種">
          <font>
             <Font size="24.0" />
