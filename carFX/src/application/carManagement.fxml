@@ -47,5 +47,6 @@
             <Font size="14.0" />
          </font>
       </Text>
+      <Button layoutX="484.0" layoutY="24.0" mnemonicParsing="false" text="topに戻る" />
    </children>
 </Pane>

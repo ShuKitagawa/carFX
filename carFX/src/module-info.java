@@ -1,4 +1,5 @@
 module carFX {
+	exports application;
 	requires javafx.controls;
 	requires javafx.fxml;
 	
