@@ -71,7 +71,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Button layoutX="494.0" layoutY="32.0" mnemonicParsing="false" text="topに戻る" />
+      <Button fx:id="returnTop" layoutX="494.0" layoutY="32.0" mnemonicParsing="false" onAction="#onTopClick" text="topに戻る" />
       <Label fx:id="chekResult" layoutX="413.0" layoutY="244.0" text="check" textFill="#dddddd">
          <font>
             <Font size="16.0" />
