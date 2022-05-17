@@ -1,13 +1,21 @@
 package application;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 
 public class tripCalcController {
-
+	@FXML private Button returnTop;
 	@FXML private TextField  kyoriTextField;
 	@FXML private TextField nenpiTextField;
 	@FXML private TextField gasTexField;
@@ -54,5 +62,24 @@ public class tripCalcController {
 
 	}
 
+	//Top画面に戻る
+	@FXML
+	public void onTopClick(ActionEvent event) {
+		
+		Scene s = ((Node)event.getSource()).getScene();
+		Window window = s.getWindow();
+		window.hide();
+		
+		try {
+			Parent parent = FXMLLoader.load(getClass().getResource("carcontoller.fxml"));
+			Scene scene = new Scene(parent);
+			Stage stage = new Stage();
+			stage.setScene(scene);
+			stage.setTitle("Top画面");
+			stage.show();
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 }
