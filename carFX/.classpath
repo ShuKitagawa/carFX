@@ -56,11 +56,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/Oracle/JavaFX Scene Builder 2.0/runtime/jre/lib/resources.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/Oracle/JavaFX Scene Builder 2.0/runtime/jre/lib/rt.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
