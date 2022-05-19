@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="insertCarButton" layoutX="218.0" layoutY="147.0" mnemonicParsing="false" onAction="#okInsertCarClick" prefHeight="34.0" prefWidth="82.0" text="車種登録" textAlignment="CENTER" />
+      <Text fontSmoothingType="LCD" layoutX="265.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="車両情報の登録、管理ができます。" wrappingWidth="208.44921875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="51.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="車種管理">
+         <font>
+            <Font name="Yu Gothic UI Semilight" size="49.0" />
+         </font>
+      </Text>
+      <TextField fx:id="insertCarField" layoutX="51.0" layoutY="151.0" promptText="例）アコード" />
+      <TextField fx:id="insertNenpiField" layoutX="51.0" layoutY="253.0" promptText="例）10" />
+      <Button fx:id="insertNenpiButton" layoutX="218.0" layoutY="231.0" mnemonicParsing="false" onAction="#onInsertNenpiClick" prefHeight="34.0" prefWidth="82.0" text="燃費登録" textAlignment="CENTER" />
+      <TableView fx:id="carData" layoutX="346.0" layoutY="131.0" prefHeight="203.0" prefWidth="226.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="ID" />
+          <TableColumn prefWidth="75.0" text="name" />
+            <TableColumn prefWidth="75.0" text="fuel" />
+        </columns>
+      </TableView>
+      <Button fx:id="deleteCarButton" layoutX="218.0" layoutY="315.0" mnemonicParsing="false" onAction="#onDeleteCarClick" prefHeight="34.0" prefWidth="82.0" text="車種削除" textAlignment="CENTER" />
+      <TextField fx:id="deleteCarField" layoutX="51.0" layoutY="319.0" promptText="IDを入力" />
+      <Text fontSmoothingType="LCD" layoutX="51.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="登録車種を入力" wrappingWidth="106.44921875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="51.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="燃費を登録" wrappingWidth="82.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="51.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="車両を削除" wrappingWidth="148.5078125">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="returnTop" layoutX="484.0" layoutY="24.0" mnemonicParsing="false" onAction="#onTopClick" text="topに戻る" />
+      <TextField fx:id="insertNenpiField1" layoutX="51.0" layoutY="225.0" promptText="IDを入力" />
+   </children>
+</Pane>

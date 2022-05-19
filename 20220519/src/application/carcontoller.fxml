@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller">
+   <children>
+      <Text fontSmoothingType="LCD" layoutX="84.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Management">
+         <font>
+            <Font name="Gadugi Bold" size="49.0" />
+         </font>
+      </Text>
+      <Button fx:id="nenpibutton" layoutX="22.0" layoutY="200.0" mnemonicParsing="false" onAction="#onNenpiClick" prefHeight="60.0" prefWidth="125.0" text="燃費計算" textAlignment="CENTER">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="tripbutton" layoutX="418.0" layoutY="200.0" mnemonicParsing="false" onAction="#onTripClick" prefHeight="60.0" prefWidth="125.0" text="移動計算" textAlignment="CENTER">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="syaryobutton" layoutX="220.0" layoutY="200.0" mnemonicParsing="false" onAction="#onSyaryoClick" prefHeight="60.0" prefWidth="125.0" text="車両管理" textAlignment="CENTER">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
