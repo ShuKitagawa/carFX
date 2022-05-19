@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fontSmoothingType="LCD" layoutX="41.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="移動計算">
+         <font>
+            <Font name="Yu Gothic UI Semilight" size="48.0" />
+         </font>
+      </Text>
+      <Accordion layoutX="139.0" layoutY="138.0" />
+      <TextField fx:id="kyoriTextField" layoutX="288.0" layoutY="118.0" promptText="km" />
+      <Text fontSmoothingType="LCD" layoutX="259.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="必要なガソリン量と料金を計算できます。">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="nenpiTextField" layoutX="288.0" layoutY="158.0" promptText="km/L" />
+      <TextField fx:id="gasTexField" layoutX="288.0" layoutY="196.0" promptText="円/L" />
+      <Text fontSmoothingType="LCD" layoutX="82.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="目的地までの距離">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="82.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="車の平均燃費">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="82.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ガソリン価格">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="calcButton" layoutX="288.0" layoutY="240.0" mnemonicParsing="false" onAction="#onCalcClick" prefHeight="32.0" prefWidth="96.0" text="計算する">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="fuelResult" layoutX="154.0" layoutY="293.0" text="result" textFill="#dddddd">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Text fontSmoothingType="LCD" layoutX="85.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="今回は">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="208.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lのガソリンが必要です。">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="372.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="円掛かります">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="37.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="そのためガソリン代はおおよそ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Label fx:id="costResult" layoutX="316.0" layoutY="327.0" text="result" textFill="#dddddd">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="returnTop" layoutX="494.0" layoutY="32.0" mnemonicParsing="false" onAction="#onTopClick" text="topに戻る" />
+      <Label fx:id="chekResult" layoutX="413.0" layoutY="244.0" text="check" textFill="#dddddd">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
