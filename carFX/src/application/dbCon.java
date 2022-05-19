@@ -14,7 +14,6 @@ public class dbCon {
 	static final String PASSWORD = "pirooporoo";
 
 	public static void  sqlInsert(String sqlstate) {
-
 		//車を登録
 		String carname = sqlstate;
 
@@ -23,14 +22,32 @@ public class dbCon {
 
 			preStatement.setString(1, carname);
 			int count = preStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	
+	public static void  sqlFuelInsert(String sqlstate,Integer sqlstate2) {
+		//車を登録
+		String carname = sqlstate;
+		//燃費を登録
+		int fuel = sqlstate2;
+
+		try (Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+				PreparedStatement preStatement = con.prepareStatement("insert into carmng.product (name,col) values (?,?);")) {
+
+			preStatement.setString(1, carname);
+			preStatement.setInt(2, fuel);
+			int count = preStatement.executeUpdate();
 
 		} catch (SQLException e) {
-
 			e.printStackTrace();
-
 		}
-
 	}
+	
+	
 	public static void  sqlSelect() {
 
 		//登録した車を参照
@@ -47,15 +64,14 @@ public class dbCon {
 				System.out.print(" ｜ "  + result.getString(3)+ " ｜ ");
 				System.out.println("");
 			}
-
 		} catch (SQLException e) {
-
 			e.printStackTrace();
 		}
 	}
 
-	public static void sqlFuelSelect(int CarId) {
 
+
+	public static void sqlFuelSelect(int CarId) {
 
 		//登録されている車種情報を出力
 		try (Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
@@ -66,17 +82,17 @@ public class dbCon {
 				System.out.print(" ｜ "  + result.getString(2));
 				System.out.print(" ｜ "  + result.getString(3)+ " ｜ ");
 				System.out.println("");
-
 			}
 
 		} catch (SQLException e) {
-
 			e.printStackTrace();
-
 		}
-
 	}
+
+
+	
 	public static void sqlFuelInsert(int CarId,int fuelQuality) {
+		
 		//燃費を記録
 		try (Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 				PreparedStatement preStatement = con.prepareStatement("update product set col = ? where id = ? ;")) {
@@ -85,24 +101,22 @@ public class dbCon {
 			int count = preStatement.executeUpdate();
 
 		} catch (SQLException e) {
-
 			e.printStackTrace();
 		}
 	}
 
+
+	
 	public static void sqlCarDelete(int CarId) {
-		//燃費を記録
+		//車を削除
 		try (Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 				PreparedStatement preStatement = con.prepareStatement("delete from product where id =  ?;")) {
 			preStatement.setInt(1, CarId);
 			int count = preStatement.executeUpdate();
 
 		} catch (SQLException e) {
-
 			e.printStackTrace();
-
 		}
-
-
 	}
+
 }

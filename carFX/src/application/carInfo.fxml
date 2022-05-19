@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
 <?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -16,14 +13,14 @@
          </font>
       </Text>
       <Accordion layoutX="139.0" layoutY="138.0" />
-      <TextField layoutX="288.0" layoutY="118.0" promptText="例）ホンダ　アコード" />
+      <TextField fx:id="carNameTextField" layoutX="288.0" layoutY="118.0" promptText="例）ホンダ　アコード" />
       <Text fontSmoothingType="LCD" layoutX="259.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="必要事項を記入して燃費を計算できます。">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField layoutX="288.0" layoutY="158.0" promptText="L（リットル）" />
-      <TextField layoutX="288.0" layoutY="196.0" promptText="km（キロメートル）" />
+      <TextField fx:id="fuelAmountTextField" layoutX="288.0" layoutY="158.0" promptText="L（リットル）" />
+      <TextField fx:id="tripTextField" layoutX="288.0" layoutY="196.0" promptText="km（キロメートル）" />
       <Text fontSmoothingType="LCD" layoutX="106.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="車種">
          <font>
             <Font size="24.0" />
@@ -39,12 +36,12 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Button layoutX="288.0" layoutY="240.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="計算する">
+      <Button fx:id="calcButton" layoutX="288.0" layoutY="240.0" mnemonicParsing="false" onAction="#onCalcClick" prefHeight="32.0" prefWidth="96.0" text="計算する">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Label layoutX="268.0" layoutY="328.0" text="result" textFill="#dddddd">
+      <Label fx:id="fuelResult" layoutX="268.0" layoutY="328.0" text="result" textFill="#dddddd">
          <font>
             <Font size="16.0" />
          </font>
@@ -59,6 +56,11 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Button layoutX="508.0" layoutY="22.0" mnemonicParsing="false" text="topに戻る" />
+      <Button fx:id="returnTop" layoutX="508.0" layoutY="22.0" mnemonicParsing="false" onAction="#onTopClick" text="topに戻る" />
+      <Label fx:id="chekResult" layoutX="397.0" layoutY="244.0" text="result" textFill="#dddddd">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
