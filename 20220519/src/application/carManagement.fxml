@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.carManagementContoller">
    <children>
       <Button fx:id="insertCarButton" layoutX="218.0" layoutY="147.0" mnemonicParsing="false" onAction="#okInsertCarClick" prefHeight="34.0" prefWidth="82.0" text="車種登録" textAlignment="CENTER" />
       <Text fontSmoothingType="LCD" layoutX="265.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="車両情報の登録、管理ができます。" wrappingWidth="208.44921875">
@@ -22,7 +22,7 @@
       <TextField fx:id="insertCarField" layoutX="51.0" layoutY="151.0" promptText="例）アコード" />
       <TextField fx:id="insertNenpiField" layoutX="51.0" layoutY="253.0" promptText="例）10" />
       <Button fx:id="insertNenpiButton" layoutX="218.0" layoutY="231.0" mnemonicParsing="false" onAction="#onInsertNenpiClick" prefHeight="34.0" prefWidth="82.0" text="燃費登録" textAlignment="CENTER" />
-      <TableView fx:id="carData" layoutX="346.0" layoutY="131.0" prefHeight="203.0" prefWidth="226.0">
+      <TableView fx:id="tblView" layoutX="346.0" layoutY="131.0" prefHeight="203.0" prefWidth="226.0">
         <columns>
           <TableColumn prefWidth="75.0" text="ID" />
           <TableColumn prefWidth="75.0" text="name" />
@@ -48,5 +48,10 @@
       </Text>
       <Button fx:id="returnTop" layoutX="484.0" layoutY="24.0" mnemonicParsing="false" onAction="#onTopClick" text="topに戻る" />
       <TextField fx:id="insertNenpiField1" layoutX="51.0" layoutY="225.0" promptText="IDを入力" />
+      <Button fx:id="insertCarButton1" contentDisplay="RIGHT" layoutX="500.0" layoutY="99.0" mnemonicParsing="false" onAction="#onReloadClick" prefHeight="25.0" prefWidth="65.0" text="更新" textAlignment="CENTER" textFill="#253ebc">
+         <font>
+            <Font name="Yu Gothic Bold" size="13.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

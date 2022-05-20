@@ -26,8 +26,7 @@ public class carManagementContoller {
 	@FXML private Button  deleteCarButton;
 	@FXML private Label  costResult;
 	@FXML private Label  fuelResult;
-	@FXML private TableView  carData;
-
+	@FXML private TableView<tblView>tblView;
 
 	//「車種登録」ボタンクリック
 	@FXML
@@ -53,6 +52,38 @@ public class carManagementContoller {
 		dbCon.sqlCarDelete(insertNenpiId1);
 	}
 	
+	
+	//「更新」ボタンをクリック
+	/*
+	@FXML
+	protected void onReloadClick(ActionEvent evt) {
+		try{
+			
+			DBAccess dba=new DBAccess();
+			ResultSet rs=dba.executeQuery("SELECT * FROM TBLCAT ORDER BY ID");
+
+			// 取得したデータを追加
+			ObservableList<tblView> list = FXCollections.observableArrayList();
+			
+			while(rs!=null&& rs.next()) {
+				tblView cat = new tblView();
+				cat.setId(rs.getString("ID"));
+				cat.setName(rs.getString("NAME"));
+				cat.setFuel(rs.getString("FUEL"));
+				list.add(cat);
+			}
+
+			tblView.setItems(list);
+
+		}catch(SQL Exceptione){
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}catch(Exceptione){
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+	}
+	*/
 	
 	//Top画面に戻る
 	@FXML
