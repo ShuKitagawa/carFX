@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.tripCalcController">
    <children>
       <Text fontSmoothingType="LCD" layoutX="41.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="移動計算">
          <font>
@@ -41,22 +42,22 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Label fx:id="fuelResult" layoutX="154.0" layoutY="293.0" text="result" textFill="#dddddd">
+      <Label fx:id="fuelResult" alignment="CENTER" layoutX="146.0" layoutY="284.0" prefHeight="43.0" prefWidth="110.0" textAlignment="CENTER" textFill="RED">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold Italic" size="29.0" />
          </font>
       </Label>
-      <Text fontSmoothingType="LCD" layoutX="85.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="今回は">
+      <Text fontSmoothingType="LCD" layoutX="73.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="今回は">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fontSmoothingType="LCD" layoutX="208.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lのガソリンが必要です。">
+      <Text fontSmoothingType="LCD" layoutX="260.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lのガソリンが必要です。">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fontSmoothingType="LCD" layoutX="372.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="円掛かります">
+      <Text fontSmoothingType="LCD" layoutX="437.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="円掛かります">
          <font>
             <Font size="24.0" />
          </font>
@@ -66,13 +67,13 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Label fx:id="costResult" layoutX="316.0" layoutY="327.0" text="result" textFill="#dddddd">
+      <Label fx:id="costResult" alignment="CENTER" layoutX="304.0" layoutY="314.0" prefHeight="50.0" prefWidth="132.0" textAlignment="CENTER" textFill="RED">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="29.0" />
          </font>
       </Label>
       <Button fx:id="returnTop" layoutX="494.0" layoutY="32.0" mnemonicParsing="false" onAction="#onTopClick" text="topに戻る" />
-      <Label fx:id="chekResult" layoutX="413.0" layoutY="244.0" text="check" textFill="#dddddd">
+      <Label fx:id="chekResult" layoutX="413.0" layoutY="244.0" textFill="#f70000">
          <font>
             <Font size="16.0" />
          </font>

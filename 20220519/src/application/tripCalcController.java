@@ -55,15 +55,14 @@ public class tripCalcController {
 			Integer fuelResultText =kyoriTextField3/nenpiTextField3;
 			String fuelResultText2 =fuelResultText.toString();
 
-			//結果をラベルに入れる
-			costResult.setText(fuelResultText2); 
 
 			//ガソリン代を計算
 			Integer gasResultText =gasTextField3*fuelResultText;
 			String gasResultText2 =gasResultText.toString();
 
 			//結果をラベルに入れる
-			fuelResult.setText(gasResultText2); 
+			costResult.setText(gasResultText2); 
+			fuelResult.setText(fuelResultText2); 
 
 		} else {
 			
