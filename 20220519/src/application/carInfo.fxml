@@ -41,9 +41,9 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Label fx:id="fuelResult" layoutX="268.0" layoutY="328.0" text="result" textFill="#dddddd">
+      <Label fx:id="fuelResult" alignment="CENTER" layoutX="256.0" layoutY="326.0" prefHeight="26.0" prefWidth="65.0" textFill="RED">
          <font>
-            <Font size="16.0" />
+            <Font size="17.0" />
          </font>
       </Label>
       <Text fontSmoothingType="LCD" layoutX="110.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="今回の燃費は">
@@ -57,7 +57,7 @@
          </font>
       </Text>
       <Button fx:id="returnTop" layoutX="508.0" layoutY="22.0" mnemonicParsing="false" onAction="#onTopClick" text="topに戻る" />
-      <Label fx:id="chekResult" layoutX="397.0" layoutY="244.0" text="result" textFill="#dddddd">
+      <Label fx:id="chekResult" layoutX="397.0" layoutY="244.0" textFill="RED">
          <font>
             <Font size="16.0" />
          </font>
