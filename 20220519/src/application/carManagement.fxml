@@ -20,13 +20,13 @@
          </font>
       </Text>
       <TextField fx:id="insertCarField" layoutX="51.0" layoutY="151.0" promptText="例）アコード" />
-      <TextField fx:id="insertNenpiField" layoutX="51.0" layoutY="253.0" promptText="例）10" />
+      <TextField fx:id="insertNenpiField2" layoutX="51.0" layoutY="253.0" promptText="例）10" />
       <Button fx:id="insertNenpiButton" layoutX="218.0" layoutY="231.0" mnemonicParsing="false" onAction="#onInsertNenpiClick" prefHeight="34.0" prefWidth="82.0" text="燃費登録" textAlignment="CENTER" />
       <TableView fx:id="tblView" layoutX="346.0" layoutY="131.0" prefHeight="203.0" prefWidth="226.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="75.0" text="name" />
-            <TableColumn prefWidth="75.0" text="fuel" />
+          <TableColumn fx:id="ID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="name" prefWidth="75.0" text="name" />
+            <TableColumn fx:id="fuel" prefWidth="75.0" text="fuel" />
         </columns>
       </TableView>
       <Button fx:id="deleteCarButton" layoutX="218.0" layoutY="315.0" mnemonicParsing="false" onAction="#onDeleteCarClick" prefHeight="34.0" prefWidth="82.0" text="車種削除" textAlignment="CENTER" />
