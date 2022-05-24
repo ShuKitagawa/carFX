@@ -66,6 +66,7 @@ public class carManagementContoller {
 	@FXML
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void onReloadClick(ActionEvent evt) {
+		carData = new TableView();
 		//SQLを指定してDBに接続
 		ObservableList<ObservableList> data;
 		Connection c;
