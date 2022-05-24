@@ -34,7 +34,9 @@ public class carManagementContoller {
 	@FXML private Button  deleteCarButton;
 	@FXML private Label  costResult;
 	@FXML private Label  fuelResult;
-	@FXML private TableView  carData;
+	@FXML private TableColumn name;
+	@FXML private TableColumn ID;
+	@FXML private TableColumn fuel;
 
 
 	//「車種登録」ボタンクリック
@@ -63,12 +65,15 @@ public class carManagementContoller {
 
 
 
+	@FXML private 	ObservableList<ObservableList> data;
+	@FXML private TableView  tblView;
+
 	@FXML
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void onReloadClick(ActionEvent evt) {
-		carData = new TableView();
+		tblView = new TableView();
 		//SQLを指定してDBに接続
-		ObservableList<ObservableList> data;
+		//ObservableList<ObservableList> data;
 		Connection c;
 		data = FXCollections.observableArrayList();
 		try {
@@ -79,7 +84,7 @@ public class carManagementContoller {
 
 			//カラムを取得
 			for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
-				
+
 				final int j = i;
 				TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i + 1));
 				col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList, String>, ObservableValue<String>>() {
@@ -88,10 +93,11 @@ public class carManagementContoller {
 					}
 				});
 
-				carData.getColumns().addAll(col);
+				tblView.getColumns().addAll(col);
 				System.out.println("Column [" + i + "] ");
+				System.out.println();
 			}
-			
+
 			//取得したデータをListに格納
 			while (rs.next()) {
 				ObservableList<String> row = FXCollections.observableArrayList();
@@ -105,7 +111,8 @@ public class carManagementContoller {
 			}
 
 			//画面上にデータを表示
-			carData.setItems(data);
+			tblView.itemsProperty().setValue(data);
+			tblView.setItems(data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
