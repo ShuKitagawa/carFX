@@ -48,7 +48,7 @@
       </Text>
       <Button fx:id="returnTop" layoutX="484.0" layoutY="24.0" mnemonicParsing="false" onAction="#onTopClick" text="topに戻る" />
       <TextField fx:id="insertNenpiField1" layoutX="51.0" layoutY="225.0" promptText="IDを入力" />
-      <Button fx:id="insertCarButton1" contentDisplay="RIGHT" layoutX="500.0" layoutY="99.0" mnemonicParsing="false" onAction="#onReloadClick" prefHeight="25.0" prefWidth="65.0" text="更新" textAlignment="CENTER" textFill="#253ebc">
+      <Button fx:id="reloadDBButton" contentDisplay="RIGHT" layoutX="500.0" layoutY="99.0" mnemonicParsing="false" onAction="#onReloadClick" prefHeight="25.0" prefWidth="65.0" text="更新" textAlignment="CENTER" textFill="#253ebc">
          <font>
             <Font name="Yu Gothic Bold" size="13.0" />
          </font>

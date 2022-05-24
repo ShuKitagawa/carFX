@@ -41,9 +41,9 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Label fx:id="fuelResult" alignment="CENTER" layoutX="256.0" layoutY="326.0" prefHeight="26.0" prefWidth="65.0" textFill="RED">
+      <Label fx:id="fuelResult" alignment="CENTER" layoutX="256.0" layoutY="312.0" prefHeight="26.0" prefWidth="65.0" textFill="RED">
          <font>
-            <Font size="17.0" />
+            <Font name="System Bold Italic" size="39.0" />
          </font>
       </Label>
       <Text fontSmoothingType="LCD" layoutX="110.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="今回の燃費は">
