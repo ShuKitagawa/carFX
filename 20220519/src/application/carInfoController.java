@@ -38,7 +38,7 @@ public class carInfoController {
 		String tripTextField2 = tripTextField.getText(); 
 
 		//入力値が数値かどうかチェック
-		String chek = tripCalcTask.checkFuelText(fuelAmountTextField2,tripTextField2);
+		String chek = tripCalcTask.checkFuelText(carNameTextField2,fuelAmountTextField2,tripTextField2);
 
 		//チェック結果を格納
 		chekResult.setText(chek);

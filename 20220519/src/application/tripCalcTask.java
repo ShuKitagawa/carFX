@@ -19,22 +19,27 @@ public class tripCalcTask {
 		return resultText;
 	}
 
-	public static   String checkFuelText(String fuelAmountTextField2,String tripTextField2){
-		//結果を返す
+	public static   String checkFuelText(String carNameTextField2,String fuelAmountTextField2,String tripTextField2){
+
 		String resultText = "";
+		//空白だったら
 		if ( fuelAmountTextField2.equals("") 
-				|| tripTextField2.equals(""))
-				
-		{ //空白だったら
+				|| tripTextField2.equals("")
+				|| carNameTextField2.equals(""))
+		{
 			resultText = "未入力です";
-		} else if ( !isFuelNumber(fuelAmountTextField2,tripTextField2) ){ //数値じゃなかったら
+			//11文字以上の入力はNGとする
+		} else if (carNameTextField2.length()>10){ 
+			resultText = "車種名は10文字以下" + System.getProperty("line.separator") + "にする必要があります";
+			//数値じゃなかったら
+		} else if ( !isFuelNumber(fuelAmountTextField2,tripTextField2) ){ 
 			resultText = "数値ではありません";
 		} else {
 			resultText = "OK!";
 		}
 		return resultText;
 	}
-
+		
 	public static boolean isNumber(String kyoriTextField2,String nenpiTextField2,String gasTextField2) {
 		//数値チェック
 		try {
@@ -46,7 +51,7 @@ public class tripCalcTask {
 			return false;
 		}
 	}
-	
+
 	public static boolean isFuelNumber(String fuelAmountTextField2,String tripTextField2) {
 		//数値チェック
 		try {
