@@ -68,7 +68,6 @@ public class carManagementContoller {
 	public void onReloadClick(ActionEvent evt) {
 		
 		//SQLを指定してDBに接続
-		//ObservableList<ObservableList> data;
 		ObservableList<DTO> data=FXCollections.observableArrayList();
 		Connection c;
 		try {
@@ -79,9 +78,6 @@ public class carManagementContoller {
 			name.setCellValueFactory(new PropertyValueFactory<>("name"));
 			col.setCellValueFactory(new PropertyValueFactory<>("col"));
 			
-			//ID.setCellValueFactory(p -> p.getValue().IDProperty());
-			//name.setCellValueFactory(p -> p.getValue().nameProperty());
-			//col.setCellValueFactory(p -> p.getValue().colProperty());
 			while(rs.next())
 			{
 				data.add(new DTO(
@@ -89,10 +85,8 @@ public class carManagementContoller {
 						rs.getString("name"),
 						rs.getString("col")
 						));
-
 				tblView.setItems(data);
 			}
-
 			rs.close();
 		}
 		catch(Exception e)
@@ -101,62 +95,6 @@ public class carManagementContoller {
 		}
 	}
 
-
-
-	/*
-	@FXML private 	ObservableList<ObservableList> data;
-	@FXML private TableView  tblView;
-
-	@FXML
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public void onReloadClick(ActionEvent evt) {
-		tblView = new TableView();
-		//SQLを指定してDBに接続
-		//ObservableList<ObservableList> data;
-		Connection c;
-		data = FXCollections.observableArrayList();
-		try {
-			c = DBConnect.connect();
-			String SQL = "SELECT * from PRODUCT";
-			ResultSet rs = c.createStatement().executeQuery(SQL);
-
-
-			//カラムを取得
-			for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
-
-				final int j = i;
-				TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i + 1));
-				col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList, String>, ObservableValue<String>>() {
-					public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {
-						return new SimpleStringProperty(param.getValue().get(j).toString());
-					}
-				});
-
-				tblView.getColumns().addAll(col);
-				System.out.println("Column [" + i + "] ");
-				System.out.println();
-			}
-
-			//取得したデータをListに格納
-			while (rs.next()) {
-				ObservableList<String> row = FXCollections.observableArrayList();
-				for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
-
-					row.add(rs.getString(i));
-				}
-				System.out.println("Row [1] added " + row);
-				data.add(row);
-
-			}
-
-			//画面上にデータを表示
-			tblView.itemsProperty().setValue(data);
-			tblView.setItems(data);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	 */
 
 	//Top画面に戻る
 	@FXML
