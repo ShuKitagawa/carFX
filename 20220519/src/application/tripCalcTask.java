@@ -10,9 +10,9 @@ public class tripCalcTask {
 				|| nenpiTextField2.equals("")
 				|| gasTextField2.equals("") )
 		{ //空白だったら
-			resultText = "未入力です(もう一度入力してください)";
+			resultText = "未入力です";
 		} else if ( !isNumber(kyoriTextField2,nenpiTextField2,gasTextField2) ){ //数値じゃなかったら
-			resultText = "数値ではありません(もう一度入力してください)";
+			resultText = "数値ではありません";
 		} else {
 			resultText = "OK!";
 		}
@@ -26,9 +26,9 @@ public class tripCalcTask {
 				|| tripTextField2.equals(""))
 				
 		{ //空白だったら
-			resultText = "未入力です(もう一度入力してください)";
+			resultText = "未入力です";
 		} else if ( !isFuelNumber(fuelAmountTextField2,tripTextField2) ){ //数値じゃなかったら
-			resultText = "数値ではありません(もう一度入力してください)";
+			resultText = "数値ではありません";
 		} else {
 			resultText = "OK!";
 		}

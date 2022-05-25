@@ -3,8 +3,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,12 +14,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-import javafx.util.Callback;
 
 public class carManagementContoller {
 	@FXML private Button returnTop;
@@ -32,12 +29,13 @@ public class carManagementContoller {
 	@FXML private Button  insertCarButton;
 	@FXML private Button  insertNenpiButton;
 	@FXML private Button  deleteCarButton;
+	@FXML private Button  reloadDBButton;
 	@FXML private Label  costResult;
 	@FXML private Label  fuelResult;
-	@FXML private TableColumn name;
-	@FXML private TableColumn ID;
-	@FXML private TableColumn fuel;
-
+	@FXML private TableColumn<?, ?>  name;
+	@FXML private TableColumn<?, ?>  ID;
+	@FXML private TableColumn<?, ?>  col;
+	@FXML private TableView<DTO>  tblView;
 
 	//「車種登録」ボタンクリック
 	@FXML
@@ -62,9 +60,50 @@ public class carManagementContoller {
 		int insertNenpiId1 = Integer.parseInt(deleteCarField.getText()); 
 		dbCon.sqlCarDelete(insertNenpiId1);
 	}
+	
 
 
 
+//更新ボタンをクリック
+	public void onReloadClick(ActionEvent evt) {
+		
+		//SQLを指定してDBに接続
+		//ObservableList<ObservableList> data;
+		ObservableList<DTO> data=FXCollections.observableArrayList();
+		Connection c;
+		try {
+			c = DBConnect.connect();
+			String SQL = "SELECT * from PRODUCT";
+			ResultSet rs = c.createStatement().executeQuery(SQL);
+			ID.setCellValueFactory(new PropertyValueFactory<>("ID")); 
+			name.setCellValueFactory(new PropertyValueFactory<>("name"));
+			col.setCellValueFactory(new PropertyValueFactory<>("col"));
+			
+			//ID.setCellValueFactory(p -> p.getValue().IDProperty());
+			//name.setCellValueFactory(p -> p.getValue().nameProperty());
+			//col.setCellValueFactory(p -> p.getValue().colProperty());
+			while(rs.next())
+			{
+				data.add(new DTO(
+						rs.getInt("ID"),
+						rs.getString("name"),
+						rs.getString("col")
+						));
+
+				tblView.setItems(data);
+			}
+
+			rs.close();
+		}
+		catch(Exception e)
+		{
+			System.err.println(e);
+		}
+	}
+
+
+
+	/*
 	@FXML private 	ObservableList<ObservableList> data;
 	@FXML private TableView  tblView;
 
@@ -117,7 +156,7 @@ public class carManagementContoller {
 			e.printStackTrace();
 		}
 	}
-
+	 */
 
 	//Top画面に戻る
 	@FXML
