@@ -42,6 +42,7 @@ public class carManagementContoller {
 	protected void okInsertCarClick(ActionEvent evt) {
 		//車種登録
 		String insertCarField2 = insertCarField.getText(); 
+		
 		dbCon.sqlInsert(insertCarField2);
 	}
 	//「燃費登録」ボタンクリック
