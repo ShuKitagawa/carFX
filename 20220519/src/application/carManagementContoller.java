@@ -3,8 +3,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,12 +14,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-import javafx.util.Callback;
 
 public class carManagementContoller {
 	@FXML private Button returnTop;
@@ -32,12 +29,13 @@ public class carManagementContoller {
 	@FXML private Button  insertCarButton;
 	@FXML private Button  insertNenpiButton;
 	@FXML private Button  deleteCarButton;
+	@FXML private Button  reloadDBButton;
 	@FXML private Label  costResult;
 	@FXML private Label  fuelResult;
-	@FXML private TableColumn name;
-	@FXML private TableColumn ID;
-	@FXML private TableColumn fuel;
-
+	@FXML private TableColumn<?, ?>  name;
+	@FXML private TableColumn<?, ?>  ID;
+	@FXML private TableColumn<?, ?>  col;
+	@FXML private TableView<DTO>  tblView;
 
 	//「車種登録」ボタンクリック
 	@FXML
@@ -62,59 +60,38 @@ public class carManagementContoller {
 		int insertNenpiId1 = Integer.parseInt(deleteCarField.getText()); 
 		dbCon.sqlCarDelete(insertNenpiId1);
 	}
+	
 
 
 
-	@FXML private 	ObservableList<ObservableList> data;
-	@FXML private TableView  tblView;
-
-	@FXML
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+//更新ボタンをクリック
 	public void onReloadClick(ActionEvent evt) {
-		tblView = new TableView();
+		
 		//SQLを指定してDBに接続
-		//ObservableList<ObservableList> data;
+		ObservableList<DTO> data=FXCollections.observableArrayList();
 		Connection c;
-		data = FXCollections.observableArrayList();
 		try {
 			c = DBConnect.connect();
 			String SQL = "SELECT * from PRODUCT";
 			ResultSet rs = c.createStatement().executeQuery(SQL);
-
-
-			//カラムを取得
-			for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
-
-				final int j = i;
-				TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i + 1));
-				col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList, String>, ObservableValue<String>>() {
-					public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {
-						return new SimpleStringProperty(param.getValue().get(j).toString());
-					}
-				});
-
-				tblView.getColumns().addAll(col);
-				System.out.println("Column [" + i + "] ");
-				System.out.println();
+			ID.setCellValueFactory(new PropertyValueFactory<>("ID")); 
+			name.setCellValueFactory(new PropertyValueFactory<>("name"));
+			col.setCellValueFactory(new PropertyValueFactory<>("col"));
+			
+			while(rs.next())
+			{
+				data.add(new DTO(
+						rs.getInt("ID"),
+						rs.getString("name"),
+						rs.getString("col")
+						));
+				tblView.setItems(data);
 			}
-
-			//取得したデータをListに格納
-			while (rs.next()) {
-				ObservableList<String> row = FXCollections.observableArrayList();
-				for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
-
-					row.add(rs.getString(i));
-				}
-				System.out.println("Row [1] added " + row);
-				data.add(row);
-
-			}
-
-			//画面上にデータを表示
-			tblView.itemsProperty().setValue(data);
-			tblView.setItems(data);
-		} catch (Exception e) {
-			e.printStackTrace();
+			rs.close();
+		}
+		catch(Exception e)
+		{
+			System.err.println(e);
 		}
 	}
 
