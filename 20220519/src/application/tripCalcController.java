@@ -31,15 +31,21 @@ public class tripCalcController {
 
 		//目的地までの距離
 		String kyoriTextField2 = kyoriTextField.getText(); 
+		//全角入力の場合半角に変換する
+		textCheck.toHalfWidth(kyoriTextField2);
 
 		//車の平均燃費
 		String nenpiTextField2 = nenpiTextField.getText(); 
-
+		//全角入力の場合半角に変換する
+		textCheck.toHalfWidth(nenpiTextField2);
+		
 		//ガソリン価格
 		String gasTextField2 = gasTexField.getText(); 
-
+		//全角入力の場合半角に変換する
+		textCheck.toHalfWidth(gasTextField2);
+		
 		//入力値が数値かどうかチェック
-		String chek = tripCalcTask.checkText(kyoriTextField2,nenpiTextField2,gasTextField2);
+		String chek = textCheck.checkText(kyoriTextField2,nenpiTextField2,gasTextField2);
 
 
 		//チェック結果を格納

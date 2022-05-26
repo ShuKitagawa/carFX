@@ -8,7 +8,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.carManagementContoller">
    <children>
-      <Button fx:id="insertCarButton" layoutX="218.0" layoutY="147.0" mnemonicParsing="false" onAction="#okInsertCarClick" prefHeight="34.0" prefWidth="82.0" text="車種登録" textAlignment="CENTER" />
+      <Button fx:id="insertCarButton" layoutX="218.0" layoutY="140.0" mnemonicParsing="false" onAction="#okInsertCarClick" prefHeight="34.0" prefWidth="82.0" text="車種登録" textAlignment="CENTER" />
       <Text fontSmoothingType="LCD" layoutX="265.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="車両情報の登録、管理ができます。" wrappingWidth="208.44921875">
          <font>
             <Font size="14.0" />
@@ -19,39 +19,44 @@
             <Font name="Yu Gothic UI Semilight" size="49.0" />
          </font>
       </Text>
-      <TextField fx:id="insertCarField" layoutX="51.0" layoutY="151.0" promptText="例）アコード" />
-      <TextField fx:id="insertNenpiField2" layoutX="51.0" layoutY="253.0" promptText="例）10" />
-      <Button fx:id="insertNenpiButton" layoutX="218.0" layoutY="231.0" mnemonicParsing="false" onAction="#onInsertNenpiClick" prefHeight="34.0" prefWidth="82.0" text="燃費登録" textAlignment="CENTER" />
-      <TableView fx:id="tblView" layoutX="327.0" layoutY="136.0" prefHeight="215.0" prefWidth="246.0">
+      <TextField fx:id="insertCarField" layoutX="51.0" layoutY="144.0" promptText="例）アコード" />
+      <TextField fx:id="insertNenpiField2" layoutX="51.0" layoutY="228.0" promptText="例）10" />
+      <Button fx:id="insertNenpiButton" layoutX="218.0" layoutY="206.0" mnemonicParsing="false" onAction="#onInsertNenpiClick" prefHeight="34.0" prefWidth="82.0" text="燃費登録" textAlignment="CENTER" />
+      <TableView fx:id="tblView" layoutX="327.0" layoutY="136.0" prefHeight="243.0" prefWidth="246.0">
         <columns>
-          <TableColumn fx:id="ID" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="name" prefWidth="75.0" text="車種名" />
+          <TableColumn fx:id="ID" prefWidth="42.0" text="ID" />
+          <TableColumn fx:id="name" prefWidth="108.0" text="車種名" />
             <TableColumn fx:id="col" prefWidth="95.0" text="燃費（km/L）" />
         </columns>
       </TableView>
-      <Button fx:id="deleteCarButton" layoutX="218.0" layoutY="315.0" mnemonicParsing="false" onAction="#onDeleteCarClick" prefHeight="34.0" prefWidth="82.0" text="車種削除" textAlignment="CENTER" />
-      <TextField fx:id="deleteCarField" layoutX="51.0" layoutY="319.0" promptText="IDを入力" />
-      <Text fontSmoothingType="LCD" layoutX="51.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="登録車種を入力" wrappingWidth="106.44921875">
+      <Button fx:id="deleteCarButton" layoutX="218.0" layoutY="280.0" mnemonicParsing="false" onAction="#onDeleteCarClick" prefHeight="34.0" prefWidth="82.0" text="車種削除" textAlignment="CENTER" />
+      <TextField fx:id="deleteCarField" layoutX="51.0" layoutY="284.0" promptText="IDを入力" />
+      <Text fontSmoothingType="LCD" layoutX="51.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="登録車両を入力" wrappingWidth="106.44921875">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fontSmoothingType="LCD" layoutX="51.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="燃費を登録" wrappingWidth="82.0">
+      <Text fontSmoothingType="LCD" layoutX="51.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="燃費を登録" wrappingWidth="82.0">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fontSmoothingType="LCD" layoutX="51.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="車両を削除" wrappingWidth="148.5078125">
+      <Text fontSmoothingType="LCD" layoutX="51.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="車両を削除" wrappingWidth="148.5078125">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
       <Button fx:id="returnTop" layoutX="484.0" layoutY="24.0" mnemonicParsing="false" onAction="#onTopClick" text="topに戻る" />
-      <TextField fx:id="insertNenpiField1" layoutX="51.0" layoutY="225.0" promptText="IDを入力" />
-      <Button fx:id="reloadDBButton" contentDisplay="RIGHT" layoutX="500.0" layoutY="99.0" mnemonicParsing="false" onAction="#onReloadClick" prefHeight="25.0" prefWidth="65.0" text="更新" textAlignment="CENTER" textFill="#253ebc">
+      <TextField fx:id="insertNenpiField1" layoutX="51.0" layoutY="200.0" promptText="IDを入力" />
+      <Button fx:id="reloadDBButton" contentDisplay="RIGHT" layoutX="484.0" layoutY="98.0" mnemonicParsing="false" onAction="#onReloadClick" prefHeight="25.0" prefWidth="65.0" text="更新" textAlignment="CENTER" textFill="#253ebc">
          <font>
             <Font name="Yu Gothic Bold" size="13.0" />
          </font>
       </Button>
+      <Label fx:id="chekResult1" layoutX="50.0" layoutY="326.0" prefHeight="25.0" prefWidth="215.0" textFill="#f70000">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
