@@ -40,7 +40,7 @@ public class carManagementContoller {
 
 	//「車種登録」ボタンクリック
 	@FXML
-	protected void okInsertCarClick(ActionEvent evt) {
+	protected void onInsertCarClick(ActionEvent evt) {
 		//車種登録
 		String insertCarField2 = insertCarField.getText(); 
 		//入力値が空白でないかどうか、10文字以下になっているかどうかチェック
@@ -48,7 +48,7 @@ public class carManagementContoller {
 		//チェック結果を格納
 		chekResult1.setText(chek);
 		
-		if(chek.equals("OK!")) {
+		if(chek.equals(checkTextFinal.OK)) {
 		dbCon.sqlInsert(insertCarField2);
 		} else {
 			insertCarField.setText("");
@@ -69,7 +69,7 @@ public class carManagementContoller {
 		//チェック結果を格納
 		chekResult1.setText(chek);
 		//チェック結果を格納
-		if(chek.equals("OK!")) {
+		if(chek.equals(checkTextFinal.OK)) {
 		//燃費を登録
 		int insertNenpiId = Integer.parseInt(insertNenpiField1.getText()); 
 		int insertNenpi = Integer.parseInt(insertNenpiField2.getText());
@@ -89,7 +89,7 @@ public class carManagementContoller {
 		//チェック結果を格納
 		chekResult1.setText(chek);
 		//チェック結果を格納
-		if(chek.equals("OK!")) {
+		if(chek.equals(checkTextFinal.OK)) {
 		//燃費を登録
 		int deleteCarField2 = Integer.parseInt(deleteCarField.getText()); 
 		dbCon.sqlCarDelete(deleteCarField2);
@@ -104,6 +104,7 @@ public class carManagementContoller {
 
 
 //更新ボタンをクリック
+	@FXML
 	public void onReloadClick(ActionEvent evt) {
 		
 		//SQLを指定してDBに接続

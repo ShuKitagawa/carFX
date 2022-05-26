@@ -50,7 +50,7 @@ public class tripCalcController {
 
 		//チェック結果を格納
 		chekResult.setText(chek);
-		if(chek.equals("OK!")) {
+		if(chek.equals(checkTextFinal.OK)) {
 
 			//チェックOKだった場合は数値に変換
 			int kyoriTextField3 = Integer.parseInt(kyoriTextField2); 		

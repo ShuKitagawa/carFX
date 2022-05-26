@@ -18,6 +18,7 @@ public class textCheck {
 		}
 		return resultText;
 	}
+	
 	public static   String checkId(String kyoriTextField2){
 		//結果を返す
 		String resultText = "";
@@ -31,6 +32,7 @@ public class textCheck {
 		}
 		return resultText;
 	}
+	
 	public static   String caeManagementCheckText(String stringInsertNenpiId1,String stringInsertNenpiI1){
 		//結果を返す
 		String resultText = "";
@@ -104,6 +106,7 @@ public class textCheck {
 			return false;
 		}
 	}
+	
 	public static boolean isNumber(String kyoriTextField2,String nenpiTextField2,String gasTextField2) {
 		//数値チェック
 		try {
@@ -116,8 +119,6 @@ public class textCheck {
 		}
 	}
 
-
-	
 	public static String toHalfWidth(String s) {
 		//全角数字を半角に変換
 		  StringBuilder sb = new StringBuilder(s);

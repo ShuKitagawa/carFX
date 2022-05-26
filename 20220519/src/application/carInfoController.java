@@ -46,7 +46,7 @@ public class carInfoController {
 
 		//チェック結果を格納
 		chekResult.setText(chek);
-		if(chek.equals("OK!")) {
+		if(chek.equals(checkTextFinal.OK)) {
 
 			//チェックOKだった場合は数値に変換
 			int fuelAmountTextField3 = Integer.parseInt(fuelAmountTextField2); 
