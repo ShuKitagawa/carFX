@@ -1,8 +1,13 @@
-package application;
+package application.controller;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 
+import application.DTO;
+import application.check.CheckTextFinal;
+import application.check.TextCheck;
+import application.database.DBConnect;
+import application.database.DbCon;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

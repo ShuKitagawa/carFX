@@ -1,4 +1,4 @@
-package application;
+package application.check;
 
 public class CheckTextFinal {
 	public static final String noText = "未入力です";

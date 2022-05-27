@@ -1,7 +1,9 @@
-package application;
+package application.controller;
 
 import java.io.IOException;
 
+import application.check.CheckTextFinal;
+import application.check.TextCheck;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
