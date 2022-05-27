@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
-public class carInfoController {
+public class CarInfoController {
 	@FXML private Button returnTop;
 	@FXML private TextField  carNameTextField;
 	@FXML private TextField fuelAmountTextField;
