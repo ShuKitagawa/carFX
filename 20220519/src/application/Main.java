@@ -12,7 +12,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("carcontoller.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("scenebuild/carcontoller.fxml"));
 			primaryStage.setTitle("初期ページ");
 			primaryStage.setScene(new Scene(root));
 			primaryStage.show();

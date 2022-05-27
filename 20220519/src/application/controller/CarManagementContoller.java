@@ -150,7 +150,7 @@ public class CarManagementContoller {
 		window.hide();
 
 		try {
-			Parent parent = FXMLLoader.load(getClass().getResource("carcontoller.fxml"));
+			Parent parent = FXMLLoader.load(getClass().getResource("scenebuild/carcontoller.fxml"));
 			Scene scene = new Scene(parent);
 			Stage stage = new Stage();
 			stage.setScene(scene);
