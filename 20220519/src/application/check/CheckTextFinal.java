@@ -1,6 +1,6 @@
-package application;
+package application.check;
 
-public class checkTextFinal {
+public class CheckTextFinal {
 	public static final String noText = "未入力です";
 	public static final String noInteger = "数値ではありません";
 	public static final String OK = "OK!";

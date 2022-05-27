@@ -1,4 +1,4 @@
-package application;
+package application.database;
 
 
 import java.sql.Connection;
@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class dbCon {
+public class DbCon {
 
 	static final String URL = "jdbc:mysql://localhost/carmng";
 	static final String USERNAME = "root";

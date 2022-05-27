@@ -1,7 +1,10 @@
-package application;
+package application.controller;
 
 import java.io.IOException;
 
+import application.check.CheckTextFinal;
+import application.check.TextCheck;
+import application.database.DbCon;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,13 +17,12 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
-public class tripCalcController {
+public class CarInfoController {
 	@FXML private Button returnTop;
-	@FXML private TextField  kyoriTextField;
-	@FXML private TextField nenpiTextField;
-	@FXML private TextField gasTexField;
+	@FXML private TextField  carNameTextField;
+	@FXML private TextField fuelAmountTextField;
+	@FXML private TextField tripTextField;
 	@FXML private Button  calcButton;
-	@FXML private Label  costResult;
 	@FXML private Label  fuelResult;
 	@FXML private Label  chekResult;
 
@@ -29,51 +31,46 @@ public class tripCalcController {
 	@FXML
 	protected void onCalcClick(ActionEvent evt) {
 
-		//目的地までの距離
-		String kyoriTextField2 = kyoriTextField.getText(); 
-		//全角入力の場合半角に変換する
-		textCheck.toHalfWidth(kyoriTextField2);
+		//車種
+		String carNameTextField2 = carNameTextField.getText(); 
 
-		//車の平均燃費
-		String nenpiTextField2 = nenpiTextField.getText(); 
+		//給油量
+		String fuelAmountTextField2 = fuelAmountTextField.getText();
 		//全角入力の場合半角に変換する
-		textCheck.toHalfWidth(nenpiTextField2);
-		
-		//ガソリン価格
-		String gasTextField2 = gasTexField.getText(); 
+		TextCheck.toHalfWidth(fuelAmountTextField2);
+
+		//走行距離
+		String tripTextField2 = tripTextField.getText(); 
 		//全角入力の場合半角に変換する
-		textCheck.toHalfWidth(gasTextField2);
-		
+		TextCheck.toHalfWidth(tripTextField2);
+
 		//入力値が数値かどうかチェック
-		String chek = textCheck.checkText(kyoriTextField2,nenpiTextField2,gasTextField2);
-
+		String chek = TextCheck.checkFuelText(carNameTextField2,fuelAmountTextField2,tripTextField2);
 
 		//チェック結果を格納
 		chekResult.setText(chek);
-		if(chek.equals(checkTextFinal.OK)) {
+		if(chek.equals(CheckTextFinal.OK)) {
 
 			//チェックOKだった場合は数値に変換
-			int kyoriTextField3 = Integer.parseInt(kyoriTextField2); 		
-			int nenpiTextField3 = Integer.parseInt(nenpiTextField2); 
-			int gasTextField3 = Integer.parseInt(gasTextField2); 
+			int fuelAmountTextField3 = Integer.parseInt(fuelAmountTextField2); 
+			int tripTextField3 = Integer.parseInt(tripTextField2); 
 
-			//必要なガソリン量を計算
-			Integer fuelResultText =kyoriTextField3/nenpiTextField3;
+			//燃費を計算
+			Integer fuelResultText =tripTextField3/fuelAmountTextField3;
 			String fuelResultText2 =fuelResultText.toString();
 
-			//ガソリン代を計算
-			Integer gasResultText =gasTextField3*fuelResultText;
-			String gasResultText2 =gasResultText.toString();
 			//結果をラベルに入れる
-			costResult.setText(gasResultText2); 
 			fuelResult.setText(fuelResultText2); 
+			
+			//車種と燃費をDBに登録
+			DbCon.sqlFuelInsert(carNameTextField2,fuelResultText);
 
 		} else {
 			
 			//入力値が正しくない場合はテキストエリアから入力値を削除
-			kyoriTextField.setText("");
-			nenpiTextField.setText("");
-			gasTexField.setText("");
+			carNameTextField.setText("");
+			fuelAmountTextField.setText("");
+			tripTextField.setText("");
 		}
 	}
 
@@ -86,7 +83,7 @@ public class tripCalcController {
 		window.hide();
 
 		try {
-			Parent parent = FXMLLoader.load(getClass().getResource("carcontoller.fxml"));
+			Parent parent = FXMLLoader.load(getClass().getResource("../scenebuild/carcontoller.fxml"));
 			Scene scene = new Scene(parent);
 			Stage stage = new Stage();
 			stage.setScene(scene);
