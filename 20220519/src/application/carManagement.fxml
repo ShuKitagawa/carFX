@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.carManagementContoller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CarManagementContoller">
    <children>
       <Button fx:id="insertCarButton" layoutX="218.0" layoutY="140.0" mnemonicParsing="false" onAction="#onInsertCarClick" prefHeight="34.0" prefWidth="82.0" text="車種登録" textAlignment="CENTER" />
       <Text fontSmoothingType="LCD" layoutX="265.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="車両情報の登録、管理ができます。" wrappingWidth="208.44921875">
