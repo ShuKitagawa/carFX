@@ -1,6 +1,6 @@
 package application;
 
-public class textCheck {
+public class TextCheck {
 
 
 	public static   String checkText(String kyoriTextField2,String nenpiTextField2,String gasTextField2){
@@ -10,11 +10,11 @@ public class textCheck {
 				|| nenpiTextField2.equals("")
 				|| gasTextField2.equals("") )
 		{ //空白だったら
-			resultText = checkTextFinal.noText;
+			resultText = CheckTextFinal.noText;
 		} else if ( !isNumber(kyoriTextField2,nenpiTextField2,gasTextField2) ){ //数値じゃなかったら
-			resultText = checkTextFinal.noText;
+			resultText = CheckTextFinal.noText;
 		} else {
-			resultText = checkTextFinal.OK;
+			resultText = CheckTextFinal.OK;
 		}
 		return resultText;
 	}
@@ -24,11 +24,11 @@ public class textCheck {
 		String resultText = "";
 		if ( kyoriTextField2.equals("") )
 		{ //空白だったら
-			resultText = checkTextFinal.noText;
+			resultText = CheckTextFinal.noText;
 		} else if ( !isIDNumber(kyoriTextField2) ){ //数値じゃなかったら
-			resultText =  checkTextFinal.noInteger;
+			resultText =  CheckTextFinal.noInteger;
 		} else {
-			resultText = checkTextFinal.OK;
+			resultText = CheckTextFinal.OK;
 		}
 		return resultText;
 	}
@@ -40,11 +40,11 @@ public class textCheck {
 				|| stringInsertNenpiI1.equals(""))
 				
 		{ //空白だったら
-			resultText = checkTextFinal.noText;
+			resultText = CheckTextFinal.noText;
 		} else if ( !isFuelNumber(stringInsertNenpiId1,stringInsertNenpiI1) ){ //数値じゃなかったら
-			resultText = checkTextFinal.noInteger;
+			resultText = CheckTextFinal.noInteger;
 		} else {
-			resultText = checkTextFinal.OK;
+			resultText = CheckTextFinal.OK;
 		}
 		return resultText;
 	}
@@ -57,15 +57,15 @@ public class textCheck {
 				|| tripTextField2.equals("")
 				|| carNameTextField2.equals(""))
 		{
-			resultText = checkTextFinal.noText;;
+			resultText = CheckTextFinal.noText;;
 			//11文字以上の入力はNGとする
 		} else if (carNameTextField2.length()>10){ 
-			resultText = checkTextFinal.canameNG;
+			resultText = CheckTextFinal.canameNG;
 			//数値じゃなかったら
 		} else if ( !isFuelNumber(fuelAmountTextField2,tripTextField2) ){ 
-			resultText = checkTextFinal.noInteger;
+			resultText = CheckTextFinal.noInteger;
 		} else {
-			resultText = checkTextFinal.OK;
+			resultText = CheckTextFinal.OK;
 		}
 		return resultText;
 	}
@@ -76,12 +76,12 @@ public class textCheck {
 		//空白だったら
 		if ( insertCarField2.equals("")) 
 		{
-			resultText = checkTextFinal.noText;
+			resultText = CheckTextFinal.noText;
 			//11文字以上の入力はNGとする
 		} else if (insertCarField2.length()>10){ 
-			resultText = checkTextFinal.canameNG;
+			resultText = CheckTextFinal.canameNG;
 		} else {
-			resultText = checkTextFinal.OK;
+			resultText = CheckTextFinal.OK;
 		}
 		return resultText;
 	}

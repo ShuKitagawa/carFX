@@ -20,7 +20,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
-public class carManagementContoller {
+public class CarManagementContoller {
 	@FXML private Button returnTop;
 	@FXML private Label  chekResult1;
 	@FXML private TextField  insertCarField;
@@ -44,12 +44,12 @@ public class carManagementContoller {
 		//車種登録
 		String insertCarField2 = insertCarField.getText(); 
 		//入力値が空白でないかどうか、10文字以下になっているかどうかチェック
-		String chek = textCheck.checkCarnameText(insertCarField2);
+		String chek = TextCheck.checkCarnameText(insertCarField2);
 		//チェック結果を格納
 		chekResult1.setText(chek);
 		
-		if(chek.equals(checkTextFinal.OK)) {
-		dbCon.sqlInsert(insertCarField2);
+		if(chek.equals(CheckTextFinal.OK)) {
+			DbCon.sqlInsert(insertCarField2);
 		} else {
 			insertCarField.setText("");
 		}
@@ -60,20 +60,20 @@ public class carManagementContoller {
 	protected void onInsertNenpiClick(ActionEvent evt) {
 		
 		String stringInsertNenpiId1 = insertNenpiField1.getText();
-		textCheck.toHalfWidth(stringInsertNenpiId1);
+		TextCheck.toHalfWidth(stringInsertNenpiId1);
 		
 		String stringInsertNenpi1 = insertNenpiField2.getText();
-		textCheck.toHalfWidth(stringInsertNenpi1);
+		TextCheck.toHalfWidth(stringInsertNenpi1);
 		
-		String chek = textCheck.caeManagementCheckText(stringInsertNenpiId1,stringInsertNenpi1);
+		String chek = TextCheck.caeManagementCheckText(stringInsertNenpiId1,stringInsertNenpi1);
 		//チェック結果を格納
 		chekResult1.setText(chek);
 		//チェック結果を格納
-		if(chek.equals(checkTextFinal.OK)) {
+		if(chek.equals(CheckTextFinal.OK)) {
 		//燃費を登録
 		int insertNenpiId = Integer.parseInt(insertNenpiField1.getText()); 
 		int insertNenpi = Integer.parseInt(insertNenpiField2.getText());
-		dbCon.sqlFuelInsert(insertNenpiId,insertNenpi);
+		DbCon.sqlFuelInsert(insertNenpiId,insertNenpi);
 		} else {
 			//入力値が正しくない場合はテキストエリアから入力値を削除
 			insertNenpiField1.setText("");
@@ -85,14 +85,14 @@ public class carManagementContoller {
 	@FXML
 	protected void onDeleteCarClick(ActionEvent evt) {
 		String deleteCarField1 = deleteCarField.getText();
-		String chek = textCheck.checkId(deleteCarField1);
+		String chek = TextCheck.checkId(deleteCarField1);
 		//チェック結果を格納
 		chekResult1.setText(chek);
 		//チェック結果を格納
-		if(chek.equals(checkTextFinal.OK)) {
+		if(chek.equals(CheckTextFinal.OK)) {
 		//燃費を登録
 		int deleteCarField2 = Integer.parseInt(deleteCarField.getText()); 
-		dbCon.sqlCarDelete(deleteCarField2);
+		DbCon.sqlCarDelete(deleteCarField2);
 		} else {
 			//入力値が正しくない場合はテキストエリアから入力値を削除
 			deleteCarField.setText("");

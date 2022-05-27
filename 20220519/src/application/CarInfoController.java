@@ -34,19 +34,19 @@ public class CarInfoController {
 		//給油量
 		String fuelAmountTextField2 = fuelAmountTextField.getText();
 		//全角入力の場合半角に変換する
-		textCheck.toHalfWidth(fuelAmountTextField2);
+		TextCheck.toHalfWidth(fuelAmountTextField2);
 
 		//走行距離
 		String tripTextField2 = tripTextField.getText(); 
 		//全角入力の場合半角に変換する
-		textCheck.toHalfWidth(tripTextField2);
+		TextCheck.toHalfWidth(tripTextField2);
 
 		//入力値が数値かどうかチェック
-		String chek = textCheck.checkFuelText(carNameTextField2,fuelAmountTextField2,tripTextField2);
+		String chek = TextCheck.checkFuelText(carNameTextField2,fuelAmountTextField2,tripTextField2);
 
 		//チェック結果を格納
 		chekResult.setText(chek);
-		if(chek.equals(checkTextFinal.OK)) {
+		if(chek.equals(CheckTextFinal.OK)) {
 
 			//チェックOKだった場合は数値に変換
 			int fuelAmountTextField3 = Integer.parseInt(fuelAmountTextField2); 
@@ -60,7 +60,7 @@ public class CarInfoController {
 			fuelResult.setText(fuelResultText2); 
 			
 			//車種と燃費をDBに登録
-			dbCon.sqlFuelInsert(carNameTextField2,fuelResultText);
+			DbCon.sqlFuelInsert(carNameTextField2,fuelResultText);
 
 		} else {
 			

@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
-public class controller {
+public class Controller {
 
 	@FXML private Button tripbutton;
 	@FXML private Button nenpibutton;
