@@ -1,4 +1,4 @@
-package application;
+package application.controller;
 
 import java.io.IOException;
 
@@ -28,7 +28,7 @@ public class Controller {
 		window.hide();
 		
 		try {
-			Parent parent = FXMLLoader.load(getClass().getResource("scenebuild/carInfo.fxml"));
+			Parent parent = FXMLLoader.load(getClass().getResource("../scenebuild/carInfo.fxml"));
 			Scene scene = new Scene(parent);
 			Stage stage = new Stage();
 			stage.setScene(scene);
@@ -48,7 +48,7 @@ public class Controller {
 		window.hide();
 		
 		try {
-			Parent parent = FXMLLoader.load(getClass().getResource("scenebuild/carManagement.fxml"));
+			Parent parent = FXMLLoader.load(getClass().getResource("../scenebuild/carManagement.fxml"));
 			Scene scene = new Scene(parent);
 			Stage stage = new Stage();
 			stage.setScene(scene);
@@ -68,7 +68,7 @@ public class Controller {
 		window.hide();
 		
 		try {
-			Parent parent = FXMLLoader.load(getClass().getResource("scenebuild/tripCalc.fxml"));
+			Parent parent = FXMLLoader.load(getClass().getResource("../scenebuild/tripCalc.fxml"));
 			Scene scene = new Scene(parent);
 			Stage stage = new Stage();
 			stage.setScene(scene);
