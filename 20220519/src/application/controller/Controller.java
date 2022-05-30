@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 public class Controller {
+	//初期画面から各機能画面の表示
 
 	@FXML private Button tripbutton;
 	@FXML private Button nenpibutton;

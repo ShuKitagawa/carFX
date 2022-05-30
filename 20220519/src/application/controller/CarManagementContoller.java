@@ -26,6 +26,8 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 public class CarManagementContoller {
+	
+	//車両管理画面
 	@FXML private Button returnTop;
 	@FXML private Label  chekResult1;
 	@FXML private TextField  insertCarField;
@@ -105,8 +107,6 @@ public class CarManagementContoller {
 		
 	}
 	
-
-
 
 //更新ボタンをクリック
 	@FXML
