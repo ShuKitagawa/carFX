@@ -18,6 +18,8 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 public class CarInfoController {
+	
+	//燃費計算画面
 	@FXML private Button returnTop;
 	@FXML private TextField  carNameTextField;
 	@FXML private TextField fuelAmountTextField;
@@ -77,7 +79,6 @@ public class CarInfoController {
 	//Top画面に戻る
 	@FXML
 	public void onTopClick(ActionEvent event) {
-
 		Scene s = ((Node)event.getSource()).getScene();
 		Window window = s.getWindow();
 		window.hide();

@@ -17,6 +17,8 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 public class TripCalcController {
+	
+	//移動計算画面
 	@FXML private Button returnTop;
 	@FXML private TextField  kyoriTextField;
 	@FXML private TextField nenpiTextField;

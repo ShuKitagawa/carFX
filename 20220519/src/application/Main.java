@@ -8,8 +8,7 @@ import javafx.stage.Stage;
  
  
 public class Main extends Application {
-	@SuppressWarnings("exports")
-	@Override
+//初期画面の表示
 	public void start(Stage primaryStage) throws Exception {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("scenebuild/carcontoller.fxml"));
