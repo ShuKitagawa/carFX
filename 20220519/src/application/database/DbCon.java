@@ -36,10 +36,9 @@ public class DbCon {
 
 		try (Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 				PreparedStatement preStatement = con.prepareStatement("insert into carmng.product (name,col) values (?,?);")) {
-
 			preStatement.setString(1, carname);
 			preStatement.setInt(2, fuel);
-		 preStatement.executeUpdate();
+			preStatement.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
