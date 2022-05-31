@@ -75,7 +75,7 @@ public class CarManagementContoller {
 		String chek = TextCheck.caeManagementCheckText(nenpiId,nenpi);
 		//チェック結果を格納
 		chekResult1.setText(chek);
-		//チェック結果を格納
+		
 		if(chek.equals(CheckTextFinal.OK)) {
 		//燃費を登録
 		int intNenpiId = Integer.parseInt(insertNenpiField1.getText()); 
@@ -95,7 +95,7 @@ public class CarManagementContoller {
 		String chek = TextCheck.checkId(deleteCar);
 		//チェック結果を格納
 		chekResult1.setText(chek);
-		//チェック結果を格納
+		
 		if(chek.equals(CheckTextFinal.OK)) {
 		//燃費を登録
 		int intDeleteCar = Integer.parseInt(deleteCarField.getText()); 
