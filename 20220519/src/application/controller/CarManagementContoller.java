@@ -35,7 +35,7 @@ public class CarManagementContoller {
 	@FXML private TextField insertNenpiField2;
 	@FXML private TextField deleteCarField;
 	@FXML private Button  insertCarButton;
-	@FXML private Button  insertNenpiButton;
+	@FXML private Button  intNenpiButton;
 	@FXML private Button  deleteCarButton;
 	@FXML private Button  reloadDBButton;
 	@FXML private Label  costResult;
@@ -49,14 +49,14 @@ public class CarManagementContoller {
 	@FXML
 	protected void onInsertCarClick(ActionEvent evt) {
 		//車種登録
-		String insertCarField2 = insertCarField.getText(); 
+		String insertCar = insertCarField.getText(); 
 		//入力値が空白でないかどうか、10文字以下になっているかどうかチェック
-		String chek = TextCheck.checkCarnameText(insertCarField2);
+		String chek = TextCheck.checkCarnameText(insertCar);
 		//チェック結果を格納
 		chekResult1.setText(chek);
 		
 		if(chek.equals(CheckTextFinal.OK)) {
-			DbCon.sqlInsert(insertCarField2);
+			DbCon.sqlInsert(insertCar);
 		} else {
 			insertCarField.setText("");
 		}
@@ -66,21 +66,21 @@ public class CarManagementContoller {
 	@FXML
 	protected void onInsertNenpiClick(ActionEvent evt) {
 		
-		String stringInsertNenpiId1 = insertNenpiField1.getText();
-		TextCheck.toHalfWidth(stringInsertNenpiId1);
+		String nenpiId = insertNenpiField1.getText();
+		TextCheck.toHalfWidth(nenpiId);
 		
-		String stringInsertNenpi1 = insertNenpiField2.getText();
-		TextCheck.toHalfWidth(stringInsertNenpi1);
+		String nenpi = insertNenpiField2.getText();
+		TextCheck.toHalfWidth(nenpi);
 		
-		String chek = TextCheck.caeManagementCheckText(stringInsertNenpiId1,stringInsertNenpi1);
+		String chek = TextCheck.caeManagementCheckText(nenpiId,nenpi);
 		//チェック結果を格納
 		chekResult1.setText(chek);
-		//チェック結果を格納
+		
 		if(chek.equals(CheckTextFinal.OK)) {
 		//燃費を登録
-		int insertNenpiId = Integer.parseInt(insertNenpiField1.getText()); 
-		int insertNenpi = Integer.parseInt(insertNenpiField2.getText());
-		DbCon.sqlFuelInsert(insertNenpiId,insertNenpi);
+		int intNenpiId = Integer.parseInt(insertNenpiField1.getText()); 
+		int intNenpi = Integer.parseInt(insertNenpiField2.getText());
+		DbCon.sqlFuelInsert(intNenpiId,intNenpi);
 		} else {
 			//入力値が正しくない場合はテキストエリアから入力値を削除
 			insertNenpiField1.setText("");
@@ -91,15 +91,15 @@ public class CarManagementContoller {
 	//「車種削除」ボタンをクリック
 	@FXML
 	protected void onDeleteCarClick(ActionEvent evt) {
-		String deleteCarField1 = deleteCarField.getText();
-		String chek = TextCheck.checkId(deleteCarField1);
+		String deleteCar = deleteCarField.getText();
+		String chek = TextCheck.checkId(deleteCar);
 		//チェック結果を格納
 		chekResult1.setText(chek);
-		//チェック結果を格納
+		
 		if(chek.equals(CheckTextFinal.OK)) {
 		//燃費を登録
-		int deleteCarField2 = Integer.parseInt(deleteCarField.getText()); 
-		DbCon.sqlCarDelete(deleteCarField2);
+		int intDeleteCar = Integer.parseInt(deleteCarField.getText()); 
+		DbCon.sqlCarDelete(intDeleteCar);
 		} else {
 			//入力値が正しくない場合はテキストエリアから入力値を削除
 			deleteCarField.setText("");

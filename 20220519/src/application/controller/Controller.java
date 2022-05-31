@@ -23,7 +23,7 @@ public class Controller {
 	//燃費計算画面
 	@FXML
 	public void onNenpiClick(ActionEvent event) {
-		
+		//Top画面を閉じる
 		Scene s = ((Node)event.getSource()).getScene();
 		Window window = s.getWindow();
 		window.hide();
@@ -43,7 +43,7 @@ public class Controller {
 	//車両管理画面
 	@FXML
 	public void onSyaryoClick(ActionEvent event) {
-		
+		//Top画面を閉じる
 		Scene s = ((Node)event.getSource()).getScene();
 		Window window = s.getWindow();
 		window.hide();
@@ -63,7 +63,7 @@ public class Controller {
 	//移動計算画面
 	@FXML
 	public void onTripClick(ActionEvent event) {
-		
+		//Top画面を閉じる
 		Scene s = ((Node)event.getSource()).getScene();
 		Window window = s.getWindow();
 		window.hide();

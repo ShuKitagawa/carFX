@@ -34,38 +34,38 @@ public class CarInfoController {
 	protected void onCalcClick(ActionEvent evt) {
 
 		//車種
-		String carNameTextField2 = carNameTextField.getText(); 
+		String carName = carNameTextField.getText(); 
 
 		//給油量
-		String fuelAmountTextField2 = fuelAmountTextField.getText();
+		String fuelAmount = fuelAmountTextField.getText();
 		//全角入力の場合半角に変換する
-		TextCheck.toHalfWidth(fuelAmountTextField2);
+		TextCheck.toHalfWidth(fuelAmount);
 
 		//走行距離
-		String tripTextField2 = tripTextField.getText(); 
+		String trip = tripTextField.getText(); 
 		//全角入力の場合半角に変換する
-		TextCheck.toHalfWidth(tripTextField2);
+		TextCheck.toHalfWidth(trip);
 
 		//入力値が数値かどうかチェック
-		String chek = TextCheck.checkFuelText(carNameTextField2,fuelAmountTextField2,tripTextField2);
+		String chek = TextCheck.checkFuelText(carName,fuelAmount,trip);
 
 		//チェック結果を格納
 		chekResult.setText(chek);
 		if(chek.equals(CheckTextFinal.OK)) {
 
 			//チェックOKだった場合は数値に変換
-			int fuelAmountTextField3 = Integer.parseInt(fuelAmountTextField2); 
-			int tripTextField3 = Integer.parseInt(tripTextField2); 
+			int intFuelAmounInt = Integer.parseInt(fuelAmount); 
+			int intTrip = Integer.parseInt(trip); 
 
 			//燃費を計算
-			Integer fuelResultText =tripTextField3/fuelAmountTextField3;
+			Integer fuelResultText =intTrip/intFuelAmounInt;
 			String fuelResultText2 =fuelResultText.toString();
 
 			//結果をラベルに入れる
 			fuelResult.setText(fuelResultText2); 
 			
 			//車種と燃費をDBに登録
-			DbCon.sqlFuelInsert(carNameTextField2,fuelResultText);
+			DbCon.sqlFuelInsert(carName,fuelResultText);
 
 		} else {
 			

@@ -34,22 +34,22 @@ public class TripCalcController {
 	protected void onCalcClick(ActionEvent evt) {
 
 		//目的地までの距離
-		String kyoriTextField2 = kyoriTextField.getText(); 
+		String kyori = kyoriTextField.getText(); 
 		//全角入力の場合半角に変換する
-		TextCheck.toHalfWidth(kyoriTextField2);
+		TextCheck.toHalfWidth(kyori);
 
 		//車の平均燃費
-		String nenpiTextField2 = nenpiTextField.getText(); 
+		String nenpi = nenpiTextField.getText(); 
 		//全角入力の場合半角に変換する
-		TextCheck.toHalfWidth(nenpiTextField2);
+		TextCheck.toHalfWidth(nenpi);
 		
 		//ガソリン価格
-		String gasTextField2 = gasTexField.getText(); 
+		String gas = gasTexField.getText(); 
 		//全角入力の場合半角に変換する
-		TextCheck.toHalfWidth(gasTextField2);
+		TextCheck.toHalfWidth(gas);
 		
 		//入力値が数値かどうかチェック
-		String chek = TextCheck.checkText(kyoriTextField2,nenpiTextField2,gasTextField2);
+		String chek = TextCheck.checkText(kyori,nenpi,gas);
 
 
 		//チェック結果を格納
@@ -57,16 +57,16 @@ public class TripCalcController {
 		if(chek.equals(CheckTextFinal.OK)) {
 
 			//チェックOKだった場合は数値に変換
-			int kyoriTextField3 = Integer.parseInt(kyoriTextField2); 		
-			int nenpiTextField3 = Integer.parseInt(nenpiTextField2); 
-			int gasTextField3 = Integer.parseInt(gasTextField2); 
+			int intKyori = Integer.parseInt(kyori); 		
+			int intNenpi = Integer.parseInt(nenpi); 
+			int intGas = Integer.parseInt(gas); 
 
 			//必要なガソリン量を計算
-			Integer fuelResultText =kyoriTextField3/nenpiTextField3;
+			Integer fuelResultText =intKyori/intNenpi;
 			String fuelResultText2 =fuelResultText.toString();
 
 			//ガソリン代を計算
-			Integer gasResultText =gasTextField3*fuelResultText;
+			Integer gasResultText =intGas*fuelResultText;
 			String gasResultText2 =gasResultText.toString();
 			//結果をラベルに入れる
 			costResult.setText(gasResultText2); 
